@@ -1,0 +1,1 @@
+print('hello aoc 2022')
