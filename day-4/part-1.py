@@ -25,7 +25,6 @@ with open('input.txt') as f:
 
 overlapSectionAssigement = 0
 for sectionAssignement in sectionAssignements: 
-    sortSectionAssignement(sectionAssignement)
     if verifyOverlap(sectionAssignement, sortSectionAssignement(sectionAssignement)) :
         overlapSectionAssigement += 1
 
