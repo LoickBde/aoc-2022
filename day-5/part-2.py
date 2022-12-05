@@ -36,7 +36,8 @@ stacks = parseStacks(rawStacks)
 instructions = parseInstruction(rawInstructions)
 
 for nb, source, dest in instructions:
-    for i in range(nb):
-        stacks[dest-1].append(stacks[source-1].pop())
+        movingCrates = stacks[source-1][-nb:]
+        del stacks[source-1][len(stacks[source-1]) - nb:]
+        stacks[dest-1].extend(movingCrates)
 
 print(''.join([stack[len(stack)-1] for stack in stacks]))
